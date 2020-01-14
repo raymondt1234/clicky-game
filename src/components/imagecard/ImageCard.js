@@ -1,4 +1,5 @@
 import React from 'react';
+import './ImageCard.css'
 
 const ImageCard = (props) => {
     return (
@@ -6,4 +7,6 @@ const ImageCard = (props) => {
             <img src={props.image} />
         </div>
     );
-}
+};
+
+export default ImageCard;

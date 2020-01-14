@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import images from '../../images.json'
 import ImageCard from '../imagecard/ImageCard'
+import Title from '../title/Title'
 
 class GameBoard extends Component {
     state = {
         images
     };
 
-    render () {
+    render() {
         return (
-            <h1>Game Board</h1>
-            {
-                this.state.images.map(image => (
-                    <ImageCard 
-                    id={images.id}
-                    key={images.id}
-                    image={images.image}/>
-                ))
-            }
+            <div>
+                <Title>Clicky Game</Title>
+                {
+                    this.state.images.map(image => (
+                        <ImageCard
+                            id={image.id}
+                            key={image.id}
+                            image={image.image} />
+                    ))
+                }
+            </div>
         );
     };
 };
