@@ -22,6 +22,9 @@ class GameBoard extends Component {
         }
         this.setState({images: tempArray});
     }
+    imageClicked() {
+        this.shuffleImages();
+    }
 
     render() {
         return (
@@ -32,7 +35,8 @@ class GameBoard extends Component {
                         <ImageCard
                             id={image.id}
                             key={image.id}
-                            image={image.image} />
+                            image={image.image} 
+                            imageClicked={this.imageClicked}/>
                     ))
                 }
             </div>
