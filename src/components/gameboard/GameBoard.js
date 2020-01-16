@@ -8,6 +8,21 @@ class GameBoard extends Component {
         images
     };
 
+    componentDidMount() {
+        this.shuffleImages();
+    }
+
+    shuffleImages() {
+        let tempArray = [];
+        let images = this.state.images;
+        while (images.length > 0) {
+            let randomIndex = Math.floor(Math.random() * images.length);
+            tempArray.push(images[randomIndex]);
+            images.splice(randomIndex, 1);
+        }
+        this.setState({images: tempArray});
+    }
+
     render() {
         return (
             <div>
