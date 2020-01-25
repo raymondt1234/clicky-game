@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useLayoutEffect } from 'react';
 import images from '../../images.json'
 import ImageCard from '../imagecard/ImageCard'
 import Title from '../title/Title'
 
 class GameBoard extends Component {
     state = {
-        images
+        images: images
     };
 
     componentDidMount() {
@@ -13,6 +13,7 @@ class GameBoard extends Component {
     }
 
     shuffleImages() {
+        
         let tempArray = [];
         let images = this.state.images;
         while (images.length > 0) {
@@ -36,7 +37,7 @@ class GameBoard extends Component {
                             id={image.id}
                             key={image.id}
                             image={image.image} 
-                            imageClicked={this.imageClicked}/>
+                            imageClicked={this.imageClicked.bind(this)}/>
                     ))
                 }
             </div>

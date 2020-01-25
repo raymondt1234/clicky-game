@@ -3,7 +3,7 @@ import './ImageCard.css'
 
 const ImageCard = (props) => {
     return (
-        <div onClick={() => props.imageClicked(props.id)}>
+        <div onClick={() => props.imageClicked()}>
             <img src={props.image} />
         </div>
     );
